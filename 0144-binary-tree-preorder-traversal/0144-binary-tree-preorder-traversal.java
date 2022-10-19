@@ -20,9 +20,22 @@ class Solution {
         return list;
     }
     private void dfs(TreeNode node, List<Integer> list){
-        if(node==null) return;
-        list.add(node.val);
-        dfs(node.left, list);
-        dfs(node.right, list);
+        if(node==null) {return;}
+        // list.add(node.val);
+        // dfs(node.left, list);
+        // dfs(node.right, list);
+        Stack<TreeNode>stack=new Stack<>();
+        stack.push(node);
+        while(!stack.isEmpty()){
+            TreeNode temp=stack.pop();
+            list.add(temp.val);
+            if(temp.right!=null){
+                stack.push(temp.right);
+            }
+            if(temp.left!=null){
+                stack.push(temp.left);
+            }
+        }
+     
     }
 }
