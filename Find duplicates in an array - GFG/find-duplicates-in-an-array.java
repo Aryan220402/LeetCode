@@ -33,14 +33,11 @@ class Solution {
                map.put(arr[i],map.get(arr[i])+1);
            }
        }
-    //   int max=(Collections.max(map.values()));
-    //   if(max>size/2){
            for(Map.Entry<Integer,Integer> entry:map.entrySet()){
                if(entry.getValue()>1){
                     array.add(entry.getKey());
                }
            }
-    //   }
         if(array.size()==0){
             array.add(-1);
         
